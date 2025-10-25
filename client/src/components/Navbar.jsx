@@ -11,8 +11,8 @@ const NavItem = ({ to, label, onClick }) => (
     to={to}
     className={({ isActive }) =>
       `block px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
-        isActive 
-          ? "bg-blue-500/10 text-blue-600 backdrop-blur-sm" 
+        isActive
+          ? "bg-blue-500/10 text-blue-600 backdrop-blur-sm"
           : "text-gray-700 hover:bg-gray-200/50 hover:backdrop-blur-sm"
       }`
     }
@@ -64,7 +64,9 @@ export default function Navbar() {
                   alt="profile"
                   className="rounded-full h-8 w-8 object-cover border border-gray-200"
                   onError={(e) => {
-                    console.log('Failed to load avatar, falling back to default');
+                    console.log(
+                      "Failed to load avatar, falling back to default"
+                    );
                     e.target.src = ProfileImage;
                   }}
                 />
@@ -91,10 +93,13 @@ export default function Navbar() {
 
         {/* Mobile menu button (< lg) */}
         <button
-          className="lg:hidden inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-200/50 transition-all duration-200"
-          aria-label="Toggle menu"
+          className={`lg:hidden inline-flex items-center justify-center p-2 rounded-md transition-all duration-200 bg-gray-200/70 cursor-pointer`}
+          aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
-          onClick={() => setOpen(!open)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setOpen(!open);
+          }}
         >
           <svg
             className="h-6 w-6"
@@ -121,24 +126,28 @@ export default function Navbar() {
       </div>
 
       {/* Mobile panel */}
-      <div className={`lg:hidden fixed inset-0 z-30 transition-opacity duration-300 ${open ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
-        {/* Backdrop */}
+      <div
+        className={`lg:hidden fixed inset-0 z-30 ${open ? 'block' : 'hidden'}`}
+        onClick={close}
+      >
+        {/* Invisible clickable overlay */}
         <div 
-          className="fixed inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300"
-          onClick={close}
+          className="absolute inset-0"
           style={{
-            opacity: open ? 1 : 0,
-            transition: 'opacity 150ms ease-in-out'
+            zIndex: -1,
+            opacity: 0,
+            cursor: 'pointer'
           }}
         />
-        
+
         {/* Menu panel */}
-        <div 
+        <div
           className="fixed top-14 right-0 left-0 bg-white/95 backdrop-blur-lg border-b border-white/20 shadow-lg"
           style={{
             opacity: open ? 1 : 0,
-            transform: open ? 'translateY(0)' : 'translateY(-10px)',
-            transition: 'opacity 150ms ease-in-out, transform 150ms ease-in-out'
+            transform: open ? "translateY(0)" : "translateY(-10px)",
+            transition:
+              "opacity 150ms ease-in-out, transform 150ms ease-in-out",
           }}
         >
           <div className="container mx-auto px-4 py-3 space-y-1">
