@@ -31,9 +31,12 @@ initPassport();
 app.use(passport.initialize());
 
 // CORS
-const corsOptions = {
-  origin: process.env.CLIENT_URL?.split(',') || process.env.CLIENT_URL || '*',
-  credentials: true,
+const corsOption = {
+    // origin: "http://localhost:5173",
+    origin: process.env.CLIENT_URL,
+    methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
+    credentials: true,
+    allowedHeaders: ['Authorization', 'Content-Type'],
 };
 app.use(cors(corsOptions));
 
