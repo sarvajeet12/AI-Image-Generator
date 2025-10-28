@@ -12,6 +12,7 @@ export const googleCallback = (req, res) => {
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'lax',
     maxAge: 7 * 24 * 60 * 60 * 1000,
+    domain: process.env.COOKIE_DOMAIN,
   });
   const redirectUrl = process.env.CLIENT_URL || '/';
   res.redirect(redirectUrl);
