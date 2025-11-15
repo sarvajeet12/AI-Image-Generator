@@ -41,12 +41,15 @@ export const googleCallback = (req, res) => {
 };
 
 export const logout = async (req, res) => {
-  // Clear cookie with same attributes (match path & sameSite/domain if used)
-  const isProd = process.env.NODE_ENV === 'production';
+  // Clear cookie with the same attributes used when setting it.
+  // Match secure/sameSite based on CLIENT_URL protocol so the browser
+  // actually removes the cookie in both dev (http) and prod (https).
+  const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+  const clientIsHttps = clientUrl.startsWith('https');
   res.clearCookie(cookieName, {
     httpOnly: true,
-    secure: isProd,
-    sameSite: isProd ? 'none' : 'lax',
+    secure: clientIsHttps,
+    sameSite: clientIsHttps ? 'none' : 'lax',
     path: '/',
   });
   res.json({ message: 'Logged out' });
