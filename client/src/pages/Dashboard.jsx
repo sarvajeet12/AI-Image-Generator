@@ -25,19 +25,19 @@ export default function Dashboard() {
     }
   };
 
-  const gettingUserData = async () =>{
+  const gettingUserData = async () => {
     try {
       const userData = await get("/api/users/me");
-      setUserData(userData)
+      setUserData(userData);
     } catch (error) {
       toast.error(err?.response?.data?.message || "Failed to load history");
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   useEffect(() => {
     fetchData();
-    gettingUserData()
+    gettingUserData();
   }, []);
 
   useEffect(() => {
@@ -49,18 +49,18 @@ export default function Dashboard() {
   }, []);
 
   // Add this effect to manage body scroll
-useEffect(() => {
-  if (selectedImage) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = 'unset';
-  }
-  
-  // Cleanup function to re-enable scrolling when component unmounts
-  return () => {
-    document.body.style.overflow = 'unset';
-  };
-}, [selectedImage]);
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    // Cleanup function to re-enable scrolling when component unmounts
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedImage]);
 
   async function downloadImage(url, filename = "imago-image.jpg") {
     try {
@@ -122,14 +122,12 @@ useEffect(() => {
     }
   };
 
-  
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-gray-50 py-12">
       <section className="container mx-auto px-6 lg:px-20">
         <div className="flex items-start gap-6">
           <div className="flex-1">
-            <div className="flex items-center justify-between gap-4 mb-6">
+            <div className="flex  flex-col sm:flex-row items-start justify-between gap-4 mb-6">
               <div>
                 <h1 className="text-2xl font-bold">
                   Welcome back, {user?.name || "Creator"}
@@ -140,7 +138,7 @@ useEffect(() => {
               </div>
 
               <div className="flex items-center gap-3">
-                <div className="text-right">
+                <div className="text-right border-1 rounded-lg px-4 py-2 bg-white shadow">
                   <div className="text-sm text-slate-500">Free used</div>
                   <div className="text-lg font-semibold">
                     {userData?.freeUsed ?? 0} / 5
@@ -241,7 +239,7 @@ useEffect(() => {
                         className="w-full h-40 object-cover"
                       />
                       <div className="p-3">
-                        <p className="text-sm text-slate-700 line-clamp-2">
+                        <p className="text-sm text-slate-700 line-clamp-2" title={g.prompt}>
                           {g.prompt}
                         </p>
                         <div className="mt-2 flex items-center justify-between text-xs text-slate-500">
@@ -287,7 +285,14 @@ useEffect(() => {
                 <div className="text-sm text-slate-500">Account</div>
                 <div className="mt-2 grid gap-2">
                   <div className="text-sm">
-                  Plan: <strong>{(user?.points ?? 0) >= 25 ? "Team" : (user?.points ?? 0) >= 10 ? "Pro" : "Free"}</strong>
+                    Plan:{" "}
+                    <strong>
+                      {(user?.points ?? 0) >= 25
+                        ? "Team"
+                        : (user?.points ?? 0) >= 10
+                        ? "Pro"
+                        : "Free"}
+                    </strong>
                   </div>
                   <div className="text-sm">
                     Member since:{" "}

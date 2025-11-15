@@ -41,7 +41,7 @@ export default function Generate() {
       setImg(data.imageUrl);
       setGallery((g) => [data.imageUrl, ...g].slice(0, 12));
       toast.success("Image generated");
-      
+      setPrompt("");
     } catch (err) {
       const msg = err?.response?.data?.message || "Failed to generate image";
       toast.error(msg);

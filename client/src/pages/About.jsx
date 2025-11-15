@@ -165,17 +165,45 @@ export default function About() {
             </div>
           </div>
 
-          <aside className="p-6 bg-gradient-to-b from-amber-50 to-white rounded-2xl border shadow-sm">
-            <h4 className="font-semibold">Get started</h4>
-            <p className="mt-2 text-slate-600 text-sm">
-              Create an account and claim your free generations today.
+          <aside className="p-6 bg-gradient-to-br from-blue-50 via-purple-50 to-white rounded-2xl border shadow-sm">
+            <h4 className="font-semibold text-lg text-slate-900">
+              Ready to create?
+            </h4>
+            <p className="mt-2 text-slate-700 text-sm font-medium">
+              From concept to stunning visuals in seconds. No design skills
+              needed.
             </p>
-            <a
-              href="/signup"
-              className="mt-4 inline-block bg-amber-500 text-white px-4 py-2 rounded-lg shadow"
-            >
-              Create account
-            </a>
+
+            <ul className="mt-4 text-sm text-slate-600 space-y-2">
+              <li className="flex items-start gap-2">
+                <span className="text-blue-500 font-bold mt-0.5">✨</span>
+                <span>
+                  Start creating with <strong>5 free generations</strong>
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-purple-500 font-bold mt-0.5">⚡</span>
+                <span>Ultra-fast results powered by cutting-edge AI</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-indigo-500 font-bold mt-0.5">🔒</span>
+                <span>Your creativity stays private and secure</span>
+              </li>
+            </ul>
+
+            <div className="mt-5 flex gap-2">
+              <Link
+                to="/generate"
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-blue-500 text-white px-4 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              >
+                <img src={ai} alt="ai-icon" className="w-4 h-4" />
+                <span className="font-semibold text-sm">Start Creating</span>
+              </Link>
+            </div>
+
+            <p className="mt-3 text-xs text-slate-500 text-center">
+              Free to explore • No credit card needed
+            </p>
           </aside>
         </section>
         <section className="mt-10">
