@@ -27,7 +27,7 @@ export default function Dashboard() {
 
   const gettingUserData = async () =>{
     try {
-      const userData = await get("/api/users/me");
+      const userData = await get("/api/users/me",{ withCredentials: true });
       setUserData(userData)
     } catch (error) {
       toast.error(err?.response?.data?.message || "Failed to load history");

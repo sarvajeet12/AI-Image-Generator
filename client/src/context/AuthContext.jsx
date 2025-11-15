@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
   const refresh = async () => {
     try {
       setLoading(true);
-      const data = await get("/api/users/me");
+      const data = await get("/api/users/me",{ withCredentials: true });
       setUser(data);
     } catch (e) {
       setUser(null);

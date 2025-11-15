@@ -26,7 +26,7 @@ export default function Generate() {
     
     try {
 
-      const userData = await get("/api/users/me");
+      const userData = await get("/api/users/me",{ withCredentials: true });
       if (userData.freeUsed >= 5 && (!userData.points || userData.points <= 0)) {
         return toast.error("Insufficient points. Please purchase credits.");
       }
