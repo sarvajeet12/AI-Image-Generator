@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import logo from "../assets/website-logo.png";
 import GoogleIcon from "../assets/google-icon.png";
 import ProfileImage from "../assets/profile-img.png";
+import { IoLogOutOutline } from "react-icons/io5";
 
 const NavItem = ({ to, label, onClick }) => (
   <NavLink
@@ -73,9 +74,9 @@ export default function Navbar() {
               </div>
               <button
                 onClick={logout}
-                className="px-3 py-1.5 text-sm font-semibold rounded-full bg-white/80 text-slate-600 hover:bg-slate-200 hover:shadow-sm transition-all duration-200 border border-slate-200/80 hover:border-slate-300/80 backdrop-blur-sm"
+                className="px-3 py-1.5 text-sm font-semibold rounded-full bg-white/80 text-slate-600 hover:bg-slate-200 hover:shadow-sm transition-all duration-200 border border-slate-200/80 hover:border-slate-300/80 backdrop-blur-sm flex items-center gap-2"
               >
-                Logout
+                <IoLogOutOutline className="text-xl"/> Logout
               </button>
             </>
           ) : (
@@ -94,7 +95,7 @@ export default function Navbar() {
         {/* Mobile menu button (< lg) */}
         <button
           className={`lg:hidden inline-flex items-center justify-center p-2 rounded-md transition-all duration-200 bg-gray-200/70 cursor-pointer`}
-          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={(e) => {
             e.stopPropagation();
@@ -127,16 +128,16 @@ export default function Navbar() {
 
       {/* Mobile panel */}
       <div
-        className={`lg:hidden fixed inset-0 z-30 ${open ? 'block' : 'hidden'}`}
+        className={`lg:hidden fixed inset-0 z-30 ${open ? "block" : "hidden"}`}
         onClick={close}
       >
         {/* Invisible clickable overlay */}
-        <div 
+        <div
           className="absolute inset-0"
           style={{
             zIndex: -1,
             opacity: 0,
-            cursor: 'pointer'
+            cursor: "pointer",
           }}
         />
 
@@ -180,9 +181,9 @@ export default function Navbar() {
                     logout();
                     close();
                   }}
-                  className="w-full text-left px-4 py-2 rounded-full text-sm font-semibold bg-white/80 hover:bg-slate-200 transition-all duration-200 border border-gray-200/80 hover:border-gray-300/80 backdrop-blur-sm"
+                  className="w-full text-left px-4 py-2 rounded-full text-sm font-semibold bg-white/80 hover:bg-slate-200 transition-all duration-200 border border-gray-200/80 hover:border-gray-300/80 backdrop-blur-sm flex items-center gap-2"
                 >
-                  Logout
+                  <IoLogOutOutline className="text-xl"/> Logout
                 </button>
               ) : (
                 <button
