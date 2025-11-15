@@ -13,18 +13,20 @@ export const googleCallback = (req, res) => {
 
     const token = signToken(req.user);
 
-    // Build cookie options for production vs local dev
-    // - For cross-site cookie (deployed frontend <> backend) we use sameSite: 'none' and secure: true
-    // - For local dev (http), sameSite 'lax' and secure false so cookie can be set on localhost
-    const isProd = process.env.NODE_ENV === 'production';
+    // Build cookie options. Decide secure/sameSite based on the client URL
+    // - If the client uses HTTPS (CLIENT_URL starts with https) we must set
+    //   `secure: true` and `sameSite: 'none'` so cross-site cookies are allowed.
+    // - For local HTTP development we use `secure: false` and `sameSite: 'lax'` so
+    //   the browser will accept the cookie on localhost.
+    const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
+    const clientIsHttps = clientUrl.startsWith('https');
 
     const cookieOptions = {
       httpOnly: true,
-      secure: isProd,               // must be true for HTTPS (Render). false for local dev (localhost)
-      sameSite: isProd ? 'none' : 'lax', // none for cross-site in prod, lax works for local dev
+      secure: clientIsHttps,
+      sameSite: clientIsHttps ? 'none' : 'lax',
       maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-      path: '/',                    // ensure cookie is sent to root path
-      // DO NOT set domain here unless you are 100% sure of its value.
+      path: '/',
     };
 
     res.cookie(cookieName, token, cookieOptions);
