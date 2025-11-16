@@ -2,6 +2,8 @@
 
 A full-stack MERN (MongoDB, Express.js, React, Node.js) application that leverages the power of AI to generate stunning images based on text prompts. The application includes user authentication, payment integration, and a user-friendly interface for generating and managing AI-generated images.
 
+## 🌐 Live : https://ai-image-generator-1-57f0.onrender.com
+
 ## 🌟 Features
 
 - **AI-Powered Image Generation**: Create unique images using advanced AI models
