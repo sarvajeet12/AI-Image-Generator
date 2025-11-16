@@ -86,8 +86,8 @@ GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 GOOGLE_CALLBACK_URL=http://localhost:5000/api/auth/google/callback
 
-# OpenAI
-OPENAI_API_KEY=your_openai_api_key
+# ClipDrop
+CLIPDROP_API_KEY=your_openai_api_key
 
 # Razorpay
 RAZORPAY_KEY_ID=your_razorpay_key_id
