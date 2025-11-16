@@ -2,6 +2,8 @@
 
 A full-stack MERN (MongoDB, Express.js, React, Node.js) application that leverages the power of AI to generate stunning images based on text prompts. The application includes user authentication, payment integration, and a user-friendly interface for generating and managing AI-generated images.
 
+## 🌐 Live : https://ai-image-generator-1-57f0.onrender.com
+
 ## 🌟 Features
 
 - **AI-Powered Image Generation**: Create unique images using advanced AI models
@@ -16,18 +18,27 @@ A full-stack MERN (MongoDB, Express.js, React, Node.js) application that leverag
 ## 📸 Screenshots
 
 ### Home Page
+
 ![alt text](Imago-1.png)
+
 ### Razorpay
+
 ![alt text](razorpay.png)
+
 ### Generate Image
+
 ![alt text](generate-image.png)
+
 ### Dashboard
+
 ![alt text](dashboard.png)
 
 ### Admin Dashboard
+
 ![alt text](admin.png)
 
 ### About Page
+
 ![alt text](about.png)
 
 ## 🛠 Tech Stack
@@ -107,8 +118,8 @@ GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 GOOGLE_CALLBACK_URL=http://localhost:5000/api/auth/google/callback
 
-# OpenAI
-OPENAI_API_KEY=your_openai_api_key
+# ClipDrop
+CLIPDROP_API_KEY=your_openai_api_key
 
 # Razorpay
 RAZORPAY_KEY_ID=your_razorpay_key_id
@@ -189,10 +200,6 @@ ai-image-generator/
 - `PUT /api/users/:id` - Update user
 - `DELETE /api/users/:id` - Delete user (admin only)
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - OpenAI for their amazing image generation API
@@ -201,26 +208,25 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📬 Contact
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - your.email@example.com
+- Project Link: https://ai-image-generator-1-57f0.onrender.com
 
-Project Link: [https://github.com/yourusername/ai-image-generator](https://github.com/yourusername/ai-image-generator)
+- Email : sarvajeetshahktn@gmail.com
+- Phone : +91 6201749157
+- LinkedIn: https://www.linkedin.com/in/sarvajeet-lal-shah-928280274/
 
 ## 🚀 Deployment
 
 ### Backend Deployment
 
 1. Set up a MongoDB Atlas cluster and get the connection string
-2. Deploy the backend to a platform like Render, Heroku, or Railway
+2. Deploy the backend to a platform on Render
 3. Set all environment variables in your hosting platform
 
 ### Frontend Deployment
 
-1. Build the frontend for production:
-   ```bash
-   cd client
-   npm run build
-   ```
-2. Deploy the `dist` folder to Vercel, Netlify, or any static hosting service
+1. Deploy the backend to a platform on Render or Vercel
+2. Set all environment variables in your hosting platform
+   > > > > > > > 53ee4c427d5408a136986dc2f902ada3d752cfd3
 
 ### Environment Variables in Production
 
@@ -251,3 +257,4 @@ Contributions are what make the open-source community such an amazing place to l
 - [ ] Add more payment methods
 - [ ] Implement referral system
 - [ ] Add dark/light theme toggle
+- [ ] Loading animations
