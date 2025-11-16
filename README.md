@@ -13,9 +13,27 @@ A full-stack MERN (MongoDB, Express.js, React, Node.js) application that leverag
 - **Secure Payments**: Integrated with Razorpay for secure transactions
 - **Performance Optimized**: Built with modern React and optimized for speed
 
+## 📸 Screenshots
+
+### Home Page
+![alt text](Imago-1.png)
+### Razorpay
+![alt text](razorpay.png)
+### Generate Image
+![alt text](generate-image.png)
+### Dashboard
+![alt text](dashboard.png)
+
+### Admin Dashboard
+![alt text](admin.png)
+
+### About Page
+![alt text](about.png)
+
 ## 🛠 Tech Stack
 
 ### Frontend
+
 - **React** - Frontend library
 - **Vite** - Build tool and development server
 - **Tailwind CSS** - Utility-first CSS framework
@@ -25,6 +43,7 @@ A full-stack MERN (MongoDB, Express.js, React, Node.js) application that leverag
 - **Chart.js** - Data visualization
 
 ### Backend
+
 - **Node.js** - JavaScript runtime
 - **Express** - Web application framework
 - **MongoDB** - NoSQL database
@@ -48,12 +67,14 @@ A full-stack MERN (MongoDB, Express.js, React, Node.js) application that leverag
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/yourusername/ai-image-generator.git
    cd ai-image-generator
    ```
 
 2. **Set up the backend**
+
    ```bash
    cd server
    npm install
@@ -100,12 +121,14 @@ FRONTEND_URL=http://localhost:5173
 ### Running the Application
 
 1. **Start the backend server**
+
    ```bash
    cd server
    npm run dev
    ```
 
 2. **Start the frontend development server**
+
    ```bash
    cd client
    npm run dev
@@ -141,23 +164,27 @@ ai-image-generator/
 ## 🔧 API Endpoints
 
 ### Authentication
+
 - `POST /api/auth/register` - Register a new user
 - `POST /api/auth/login` - User login
 - `GET /api/auth/google` - Google OAuth authentication
 - `GET /api/auth/me` - Get current user profile
 
 ### Images
+
 - `POST /api/images/generate` - Generate new AI image
 - `GET /api/images` - Get user's generated images
 - `GET /api/images/:id` - Get image by ID
 - `DELETE /api/images/:id` - Delete an image
 
 ### Payments
+
 - `POST /api/payments/create-order` - Create Razorpay order
 - `POST /api/payments/verify` - Verify payment
 - `GET /api/payments/plans` - Get available subscription plans
 
 ### Users
+
 - `GET /api/users` - Get all users (admin only)
 - `PUT /api/users/:id` - Update user
 - `DELETE /api/users/:id` - Delete user (admin only)
@@ -181,11 +208,13 @@ Project Link: [https://github.com/yourusername/ai-image-generator](https://githu
 ## 🚀 Deployment
 
 ### Backend Deployment
+
 1. Set up a MongoDB Atlas cluster and get the connection string
 2. Deploy the backend to a platform like Render, Heroku, or Railway
 3. Set all environment variables in your hosting platform
 
 ### Frontend Deployment
+
 1. Build the frontend for production:
    ```bash
    cd client
@@ -194,7 +223,9 @@ Project Link: [https://github.com/yourusername/ai-image-generator](https://githu
 2. Deploy the `dist` folder to Vercel, Netlify, or any static hosting service
 
 ### Environment Variables in Production
+
 Make sure to update the following environment variables for production:
+
 - `NODE_ENV=production`
 - Update all callback URLs to use your production domain
 - Use a production-ready MongoDB URI
