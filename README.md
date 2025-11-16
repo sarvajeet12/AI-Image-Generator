@@ -170,9 +170,9 @@ ai-image-generator/
 
 ## 📬 Contact
 
-Email : sarvajeetshahktn@gmail.com
-Phone : +91 6201749157
-Project Link: https://ai-image-generator-1-57f0.onrender.com
+- Email : sarvajeetshahktn@gmail.com
+- Phone : +91 6201749157
+- Project Link: https://ai-image-generator-1-57f0.onrender.com
 
 ## 🚀 Deployment
 
