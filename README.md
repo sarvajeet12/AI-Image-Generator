@@ -162,10 +162,6 @@ ai-image-generator/
 - `PUT /api/users/:id` - Update user
 - `DELETE /api/users/:id` - Delete user (admin only)
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
 - OpenAI for their amazing image generation API
@@ -174,24 +170,20 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📬 Contact
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - your.email@example.com
-
-Project Link: [https://github.com/yourusername/ai-image-generator](https://github.com/yourusername/ai-image-generator)
+Email : sarvajeetshahktn@gmail.com
+Phone : +91 6201749157
+Project Link: https://ai-image-generator-1-57f0.onrender.com
 
 ## 🚀 Deployment
 
 ### Backend Deployment
 1. Set up a MongoDB Atlas cluster and get the connection string
-2. Deploy the backend to a platform like Render, Heroku, or Railway
+2. Deploy the backend to a platform on Render
 3. Set all environment variables in your hosting platform
 
 ### Frontend Deployment
-1. Build the frontend for production:
-   ```bash
-   cd client
-   npm run build
-   ```
-2. Deploy the `dist` folder to Vercel, Netlify, or any static hosting service
+1. Deploy the backend to a platform on Render or Vercel
+2. Set all environment variables in your hosting platform
 
 ### Environment Variables in Production
 Make sure to update the following environment variables for production:
@@ -220,3 +212,4 @@ Contributions are what make the open-source community such an amazing place to l
 - [ ] Add more payment methods
 - [ ] Implement referral system
 - [ ] Add dark/light theme toggle
+- [ ] Loading animations
