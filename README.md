@@ -202,7 +202,7 @@ ai-image-generator/
 
 ## 🙏 Acknowledgments
 
-- OpenAI for their amazing image generation API
+- ClipDrop for their amazing image generation API
 - The MERN stack community
 - All open-source libraries used in this project
 
