@@ -257,4 +257,4 @@ Contributions are what make the open-source community such an amazing place to l
 - [ ] Add more payment methods
 - [ ] Implement referral system
 - [ ] Add dark/light theme toggle
-- [ ] Loading animation
+- [ ] Loading animations
